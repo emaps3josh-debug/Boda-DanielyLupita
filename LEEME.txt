@@ -1,0 +1,48 @@
+INVITACIÓN DANIEL & LUPITA · Mendoza Invitaciones
+==================================================
+
+1) MÚSICA
+   Ya incluida: musica/marry-you.mp3 (si la cambias, usa el mismo nombre).
+
+2) LIBRO DE BUENOS DESEOS (para que todos vean los mensajes)
+   Mientras no lo conectes, funciona en "modo prueba": cada invitado solo ve
+   lo que él mismo escribió. Para que se compartan entre todos:
+
+   a) En Firebase (puedes usar el proyecto que ya tienes) entra a
+      Firestore Database > Crear base de datos (modo producción).
+   b) Configuración del proyecto > Tus apps > Web (</>) > copia el objeto firebaseConfig.
+   c) En index.html busca  firebase: null,  y reemplázalo por tu configuración:
+        firebase: { apiKey:'...', authDomain:'...', projectId:'...',
+                    storageBucket:'...', messagingSenderId:'...', appId:'...' },
+   d) En Firestore > Reglas, agrega esta regla (solo permite leer y agregar
+      mensajes; nadie puede editar ni borrar desde la invitación):
+
+      rules_version = '2';
+      service cloud.firestore {
+        match /databases/{database}/documents {
+          match /invitaciones/{evento}/deseos/{id} {
+            allow read: if true;
+            allow create: if request.resource.data.keys().hasOnly(['nombre','mensaje','fecha'])
+              && request.resource.data.nombre is string
+              && request.resource.data.nombre.size() > 0 && request.resource.data.nombre.size() <= 40
+              && request.resource.data.mensaje is string
+              && request.resource.data.mensaje.size() >= 3 && request.resource.data.mensaje.size() <= 280
+              && request.resource.data.fecha == request.time;
+            allow update, delete: if false;
+          }
+        }
+      }
+
+   Si ya tienes otras reglas en ese proyecto, agrega solo el bloque "match /invitaciones/...".
+   Los mensajes quedan en: invitaciones > boda-daniel-lupita-2026 > deseos
+   (desde la consola de Firebase puedes borrar alguno si hace falta).
+   Para otra boda, cambia  eventoId  en index.html y cada evento tendrá su propio libro.
+
+3) VISTA PREVIA DEL LINK (WhatsApp)
+   La imagen es fotos/vista-previa.jpg. Para que aparezca, el link debe ser exactamente
+   https://boda-danielylupita.vercel.app  (en Vercel: Settings > Domains).
+   Si usas otro nombre, cámbialo en las líneas og:url / og:image / twitter:image de index.html.
+   WhatsApp guarda la vista previa en caché: pruébala la primera vez enviando el link con "?v=1" al final.
+
+4) FOTOS
+   fotos/portada.jpg es la portada; la galería usa foto1.jpg a foto5.jpg.
