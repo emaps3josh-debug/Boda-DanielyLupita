@@ -436,6 +436,33 @@ main.visible .hero-fade{animation:chIn 1s ease forwards;animation-delay:var(--dl
 .wa-reset{display:block;margin:10px auto 0;background:none;border:none;color:var(--rosa-3);font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;text-decoration:underline;cursor:pointer}
 .wa-reset[hidden]{display:none}
 
+
+/* =========================================================
+   HOJAS CON TEXTURA (menos blanco, más contraste con el verde)
+   ========================================================= */
+:root{--sprig:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27200%27%20height%3D%27200%27%20viewBox%3D%270%200%20200%20200%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%2386662a%27%20stroke-opacity%3D%27.11%27%20stroke-width%3D%271%27%20stroke-linecap%3D%27round%27%3E%3Cpath%20d%3D%27M20%2070%20C45%2052%2070%2046%20100%2046%27/%3E%3Cpath%20d%3D%27M38%2060%20C34%2050%2040%2042%2048%2042%20C48%2052%2044%2058%2038%2060Z%27/%3E%3Cpath%20d%3D%27M52%2054%20C56%2064%2066%2066%2072%2062%20C68%2054%2060%2052%2052%2054Z%27/%3E%3Cpath%20d%3D%27M66%2050%20C64%2040%2072%2034%2080%2036%20C78%2044%2072%2050%2066%2050Z%27/%3E%3Cpath%20d%3D%27M84%2047%20C88%2056%2096%2057%20101%2053%20C98%2046%2090%2045%2084%2047Z%27/%3E%3Ccircle%20cx%3D%27104%27%20cy%3D%2745%27%20r%3D%273%27/%3E%3Ccircle%20cx%3D%27108%27%20cy%3D%2741%27%20r%3D%272%27/%3E%3Ccircle%20cx%3D%27109%27%20cy%3D%2748%27%20r%3D%272%27/%3E%3Cpath%20d%3D%27M120%20170%20C140%20150%20160%20146%20186%20150%27/%3E%3Cpath%20d%3D%27M136%20158%20C134%20148%20142%20142%20150%20144%20C148%20152%20142%20157%20136%20158Z%27/%3E%3Cpath%20d%3D%27M154%20152%20C158%20160%20168%20162%20174%20158%20C170%20151%20162%20149%20154%20152Z%27/%3E%3Ccircle%20cx%3D%2760%27%20cy%3D%27140%27%20r%3D%271.5%27/%3E%3Ccircle%20cx%3D%27150%27%20cy%3D%2790%27%20r%3D%271.5%27/%3E%3Ccircle%20cx%3D%27180%27%20cy%3D%2720%27%20r%3D%271.5%27/%3E%3C/g%3E%3C/svg%3E");--pap:url(texturas/papel.jpg)}
+.frase,.details,.itin,.padrinos,.regalo,.rsvp{background:var(--sprig) 0 0/200px,var(--pap) 0 0/260px,linear-gradient(180deg,#f2e8d5,#ede1ca);background-blend-mode:normal,multiply,normal}
+.galeria{background:var(--sprig) 0 0/200px,var(--pap) 0 0/260px,linear-gradient(180deg,#e3ead3,#d6e1c4);background-blend-mode:normal,multiply,normal}
+.puntual{background:var(--sprig) 0 0/200px,var(--pap) 0 0/260px,linear-gradient(160deg,#efd4cf,#ead0c9);background-blend-mode:normal,multiply,normal}
+.deseos{background:var(--sprig) 0 0/200px,var(--pap) 0 0/260px,linear-gradient(180deg,#ece2cf,#e5d8c0);background-blend-mode:normal,multiply,normal}
+.countdown,.mensaje{background:var(--pap) 0 0/260px,linear-gradient(170deg,#3f5034,#26311f);background-blend-mode:multiply,normal}
+.frase,.details,.itin,.padrinos,.galeria,.regalo,.puntual,.rsvp,.deseos,.countdown,.mensaje{box-shadow:inset 0 0 60px rgba(120,90,40,.12)}
+.frase::before,.details::before,.itin::before,.padrinos::before,.galeria::before,.regalo::before,.puntual::before,.rsvp::before,.deseos::before,.countdown::before,.mensaje::before{content:"";position:absolute;inset:12px;border:1px solid rgba(150,115,52,.42);pointer-events:none;z-index:1;border-radius:3px}
+.frase::after,.details::after,.itin::after,.padrinos::after,.galeria::after,.regalo::after,.puntual::after,.rsvp::after,.deseos::after,.countdown::after,.mensaje::after{content:"";position:absolute;inset:17px;border:.5px solid rgba(150,115,52,.28);pointer-events:none;z-index:1;border-radius:2px;
+  background:radial-gradient(circle,rgba(150,115,52,.55) 0 2.5px,transparent 3px) 50% 0/14px 14px no-repeat,radial-gradient(circle,rgba(150,115,52,.55) 0 2.5px,transparent 3px) 50% 100%/14px 14px no-repeat}
+.countdown::before,.mensaje::before{border-color:rgba(236,213,156,.38)}
+.countdown::after,.mensaje::after{border-color:rgba(236,213,156,.22);background:radial-gradient(circle,rgba(236,213,156,.6) 0 2.5px,transparent 3px) 50% 0/14px 14px no-repeat,radial-gradient(circle,rgba(236,213,156,.6) 0 2.5px,transparent 3px) 50% 100%/14px 14px no-repeat}
+.card{background:var(--pap) 0 0/220px,linear-gradient(175deg,#fbf5e9,#f4ead8);background-blend-mode:multiply,normal;border-color:rgba(166,128,60,.4)}
+.pad{background:var(--pap) 0 0/220px,linear-gradient(160deg,#faf0e6,#f2ddd6);background-blend-mode:multiply,normal}
+.field input,.field select,.field textarea,.choice label{background:#fdf8ee}
+.choice input:checked + label{background:var(--pista-3)}
+.book-nav button{background:#fbf5e9}
+.gal-grid figure{border-color:#f7efdf}
+
+.amp2{font-family:'Cormorant Garamond',Georgia,serif!important;font-style:normal!important;font-weight:600;font-size:.7em;color:var(--oro);padding:0 .1em;vertical-align:.06em}
+.hero-names .amp.amp2{font-size:.5em;color:var(--oro-2);margin:4px 0 0}
+.intro-top .amp2{color:var(--oro-2)}
+.faceB .stamp .amp2{font-size:.8em;color:var(--oro-3)}
 /* Footer */
 footer{background:var(--paper),#1f281a;color:#efe8d6;text-align:center;padding:60px 20px 90px;position:relative;overflow:hidden}
 footer .fn{font-family:'Great Vibes',cursive;font-size:52px;color:var(--oro-2)}
@@ -559,7 +586,7 @@ footer .brand{margin-top:30px;font-family:'Montserrat',sans-serif;font-size:10px
 
   <div class="intro-top" id="introTop">
     <small>Tienes una invitación</small>
-    <h2 class="script">Daniel & Lupita</h2>
+    <h2 class="script">Daniel <span class="amp2">&amp;</span> Lupita</h2>
   </div>
 
   <div class="stage">
@@ -567,7 +594,7 @@ footer .brand{margin-top:30px;font-family:'Montserrat',sans-serif;font-size:10px
     <div class="env3d" id="env">
       <!-- Reverso (se ve mientras gira) -->
       <div class="face faceB" id="faceB">
-        <div class="stamp">D&L</div>
+        <div class="stamp">D<span class="amp2">&amp;</span>L</div>
         <div class="to">Para</div>
         <div class="nm script">nuestros invitados</div>
         <div class="to" style="margin-top:4px">20 · 12 · 2026</div>
@@ -580,7 +607,7 @@ footer .brand{margin-top:30px;font-family:'Montserrat',sans-serif;font-size:10px
           <svg class="mini a" viewBox="0 0 230 230"><use href="#cornerArt"/></svg>
           <svg class="mini b" viewBox="0 0 230 230"><use href="#cornerArt"/></svg>
           <small>Nos casamos</small>
-          <div class="ln script">Daniel & Lupita</div>
+          <div class="ln script">Daniel <span class="amp2">&amp;</span> Lupita</div>
           <div class="ld">20 · 12 · 2026</div>
         </div>
         <svg class="panel pocket" viewBox="0 0 142 100">
@@ -594,7 +621,7 @@ footer .brand{margin-top:30px;font-family:'Montserrat',sans-serif;font-size:10px
           <path d="M0 98 L69 48.5 Q71 47 73 48.5 L142 98 Q142 100 140 100 L2 100 Q0 100 0 98Z" fill="url(#gBottom)"/>
           <path d="M0 98 L69 48.5 Q71 47 73 48.5 L142 98 Q142 100 140 100 L2 100 Q0 100 0 98Z" fill="url(#pPaper)" style="mix-blend-mode:multiply"/>
           <path d="M1.5 97.5 L69.5 49.6 Q71 48.6 72.5 49.6 L140.5 97.5" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width=".5"/>
-          <rect x=".3" y=".3" width="141.4" height="99.4" rx="2" fill="none" stroke="#86662a" stroke-opacity=".55" stroke-width=".6"/>
+          <path d="M.3 1 V97.7 Q.3 99.7 2.3 99.7 H139.7 Q141.7 99.7 141.7 97.7 V1" fill="none" stroke="#86662a" stroke-opacity=".55" stroke-width=".6"/>
         </svg>
         <div class="flap">
           <svg class="fo" viewBox="0 0 142 57" preserveAspectRatio="none">
@@ -602,12 +629,12 @@ footer .brand{margin-top:30px;font-family:'Montserrat',sans-serif;font-size:10px
             <path d="M0 2 Q0 0 2 0 L140 0 Q142 0 142 2 L72.6 55.8 Q71 57 69.4 55.8Z" fill="url(#gFlap)"/>
             <path d="M0 2 Q0 0 2 0 L140 0 Q142 0 142 2 L72.6 55.8 Q71 57 69.4 55.8Z" fill="url(#pPaper)" style="mix-blend-mode:multiply"/>
             <path d="M1.2 2 L70 55 Q71 55.8 72 55 L140.8 2" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width=".5"/>
-            <path d="M0 .4 H142" stroke="url(#gG)" stroke-width="1"/>
+            
           </svg>
           <svg class="fi" viewBox="0 0 142 57" preserveAspectRatio="none">
             <path d="M71 0 Q72.6 0 73.6 1.2 L142 55 Q142 57 140 57 L2 57 Q0 57 0 55 L68.4 1.2 Q69.4 0 71 0Z" fill="url(#pLiner)"/>
             <path d="M71 0 Q72.6 0 73.6 1.2 L142 55 Q142 57 140 57 L2 57 Q0 57 0 55 L68.4 1.2 Q69.4 0 71 0Z" fill="url(#pPaper)" style="mix-blend-mode:multiply"/>
-            <path d="M71 0 Q72.6 0 73.6 1.2 L142 55 Q142 57 140 57 L2 57 Q0 57 0 55 L68.4 1.2 Q69.4 0 71 0Z" fill="none" stroke="#c6a15b" stroke-width=".6"/>
+            <path d="M0 55 L68.4 1.2 Q71 -.8 73.6 1.2 L142 55" fill="none" stroke="#c6a15b" stroke-width=".6"/>
           </svg>
         </div>
         <button class="seal" id="seal" aria-label="Abrir invitación">
@@ -617,8 +644,8 @@ footer .brand{margin-top:30px;font-family:'Montserrat',sans-serif;font-size:10px
             <circle r="31" fill="url(#gWax2)" stroke="#6e5222" stroke-width="1.2"/>
             <circle r="31" fill="none" stroke="#f6e4b8" stroke-opacity=".55" stroke-width=".8" transform="translate(-.6 -.8)"/>
             <circle r="26" fill="none" stroke="#7d5f2a" stroke-width=".6" stroke-dasharray="1.2 2"/>
-            <text y="9" text-anchor="middle" font-family="Great Vibes, cursive" font-size="27" fill="#5e451b" transform="translate(.6 .9)">D&amp;L</text>
-            <text y="9" text-anchor="middle" font-family="Great Vibes, cursive" font-size="27" fill="#fbecc6">D&amp;L</text>
+            <text y="9" text-anchor="middle" font-size="28" fill="#5e451b" transform="translate(.6 .9)"><tspan font-family="Great Vibes, cursive">D</tspan><tspan font-family="Cormorant Garamond, Georgia, serif" font-weight="700" font-size="18" dx="1.5" dy="-2">&amp;</tspan><tspan font-family="Great Vibes, cursive" dx="1.5" dy="2">L</tspan></text>
+            <text y="9" text-anchor="middle" font-size="28" fill="#fbecc6"><tspan font-family="Great Vibes, cursive">D</tspan><tspan font-family="Cormorant Garamond, Georgia, serif" font-weight="700" font-size="18" dx="1.5" dy="-2">&amp;</tspan><tspan font-family="Great Vibes, cursive" dx="1.5" dy="2">L</tspan></text>
             <ellipse cx="-16" cy="-24" rx="12" ry="5" fill="#fff" opacity=".28" transform="rotate(-30 -16 -24)"/>
           </svg>
         </button>
@@ -660,7 +687,7 @@ footer .brand{margin-top:30px;font-family:'Montserrat',sans-serif;font-size:10px
       <span class="quote" data-a="zoom">“</span>
       <blockquote data-a="blur" style="--d:.2s">El destino nos permitió encontrarnos, el amor nos hizo elegirnos y hoy queremos celebrar nuestra unión rodeados de las personas que forman parte de nuestra historia. Nos dará mucha alegría contar con tu presencia.</blockquote>
       <svg class="fdiv" viewBox="0 0 240 40" data-a="zoom" style="--d:.5s;margin-top:18px"><use href="#dividerArt"/></svg>
-      <p class="script write" data-a="up" style="font-size:40px;color:var(--pista-4);--d:.6s">Daniel & Lupita</p>
+      <p class="script write" data-a="up" style="font-size:40px;color:var(--pista-4);--d:.6s">Daniel <span class="amp2">&amp;</span> Lupita</p>
     </div>
   </section>
 
@@ -910,7 +937,7 @@ footer .brand{margin-top:30px;font-family:'Montserrat',sans-serif;font-size:10px
     <div class="deco tr" data-a="grow"><svg viewBox="0 0 230 230"><g class="sway"><use href="#cornerArt"/></g></svg></div>
     <div class="wrap">
       <svg class="fdiv" viewBox="0 0 240 40" data-a="zoom"><use href="#dividerArt"/></svg>
-      <div class="fn write" data-a="up">Daniel & Lupita</div>
+      <div class="fn write" data-a="up">Daniel <span class="amp2">&amp;</span> Lupita</div>
       <div class="fd" data-a="up" style="--d:.3s">20 · 12 · 2026</div>
       <p class="thanks" data-a="up" style="--d:.5s">¡Gracias por ser parte de nuestra historia!</p>
       <div class="brand">Mendoza Invitaciones</div>
@@ -1077,7 +1104,7 @@ setInterval(()=>{ if (main.classList.contains('visible') && !document.hidden) pe
 /* ======== NOMBRES ANIMADOS ======== */
 (function(){
   let i = 0; const wrap = s => [...s].map(c => `<span class="ch" style="--i:${i++}">${c}</span>`).join('');
-  document.getElementById('heroNames').innerHTML = `<span class="w">${wrap('Daniel')}</span><span class="amp">${wrap('&')}</span><span class="w">${wrap('Lupita')}</span>`;
+  document.getElementById('heroNames').innerHTML = `<span class="w">${wrap('Daniel')}</span><span class="amp amp2">${wrap('&')}</span><span class="w">${wrap('Lupita')}</span>`;
 })();
 
 /* ======== CUENTA REGRESIVA ======== */
@@ -1201,7 +1228,7 @@ const Libro = (()=>{
     wrap.appendChild(orn());
     if (i === 0){
       const d = el('div','pg-dedic');
-      d.appendChild(el('div','t','Daniel & Lupita'));
+      { const t = el('div','t'); t.innerHTML = 'Daniel <span class="amp2">&amp;</span> Lupita'; d.appendChild(t); }
       d.appendChild(el('div','h', deseos.length ? 'Aquí guardamos las palabras de las personas que forman parte de nuestra historia. Pasa la página…' : 'Este libro espera tus palabras. ¡Sé el primero en firmarlo!'));
       d.appendChild(el('div','h', '20 de diciembre de 2026'));
       wrap.appendChild(d);
